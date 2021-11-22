@@ -9,10 +9,11 @@ function removeTodo(event) {
 }
 
 function addTodo(event) {
-    event.preventDefault();
+    event.preventDefault(); // ne pas envoyer de requête vers le serveur
 
     const textToAdd = todoTextField.value;
     todoTextField.value = "";
+    
     if (textToAdd.length > 0) {
         const todoItem = document.createElement("li");
         const todoText = document.createTextNode(textToAdd + " ");
