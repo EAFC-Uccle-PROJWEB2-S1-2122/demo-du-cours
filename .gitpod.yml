@@ -1,3 +1,10 @@
+tasks:
+  - command: npx http-server
+
+ports:
+  - port: 8080
+    onOpen: open-browser
+
 vscode:
   extensions:
     - abusaidm.html-snippets
