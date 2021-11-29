@@ -3,9 +3,9 @@ const todoForm = document.getElementById('todoForm');
 const todoList = document.getElementById('list');
 
 function removeTodo(event) {
-    const todoLink = event.target;
-    const todoItem = todoLink.parentNode;
-    todoItem.remove();
+    const todoButton = event.target;
+    const todoLi = todoButton.parentNode;
+    todoLi.remove();
 }
 
 function addTodo(event) {
@@ -19,12 +19,15 @@ function addTodo(event) {
         const todoText = document.createTextNode(textToAdd + " ");
         todoItem.appendChild(todoText);
         
-        const removeTodoLink = document.createElement("a");
-        removeTodoLink.href = "#";
+        const removeTodoBtn = document.createElement("button");
         const removeTodoText = document.createTextNode("Supprimer");
-        removeTodoLink.appendChild(removeTodoText);
-        removeTodoLink.addEventListener('click', removeTodo);
-        todoItem.appendChild(removeTodoLink);
+        removeTodoBtn.appendChild(removeTodoText);
+
+        
+        removeTodoBtn.addEventListener('click', removeTodo);
+
+
+        todoItem.appendChild(removeTodoBtn);
         
         todoList.appendChild(todoItem);
     }
